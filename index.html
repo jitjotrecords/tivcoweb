@@ -2,102 +2,83 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TIVCO</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* RESET TOTAL */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html, body { width: 100%; height: 100%; background: #000; }
+    /* RESET */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    /* VIDEO FONDO */
-    #bg-video {
+    html, body {
+      height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      background: black;
+    }
+
+    /* VIDEO DE FONDO */
+    .video-bg {
       position: fixed;
       top: 0;
       left: 0;
       width: 100vw;
       height: 100vh;
       object-fit: cover;
-      z-index: -2;
-      background: #000;
-    }
-
-    /* OVERLAY */
-    .overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
       z-index: -1;
+      pointer-events: none;
     }
 
     /* CONTENIDO */
-    main {
-      position: relative;
-      z-index: 1;
-      height: 100vh;
-      overflow-y: scroll;
-      scroll-snap-type: y mandatory;
-      font-family: Arial, Helvetica, sans-serif;
-      color: #fff;
-    }
-
     section {
-      height: 100vh;
-      scroll-snap-align: start;
+      min-height: 100vh;
+      padding: 4rem 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
+      background: transparent;
     }
 
-    h1 { font-size: 4rem; letter-spacing: 0.2em; }
-    h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    p { max-width: 700px; line-height: 1.5; padding: 0 1rem; }
-
-    nav {
-      position: fixed;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 2;
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 0.1em;
     }
 
-    nav a {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.4);
-      display: block;
+    p {
+      max-width: 600px;
+      line-height: 1.6;
     }
   </style>
 </head>
+
 <body>
 
-  <!-- VIDEO FONDO ROOT -->
-  <video id="bg-video" autoplay muted loop playsinline>
-    <source src="bg.mp4" type="video/mp4" />
+  <!-- VIDEO -->
+  <video class="video-bg" autoplay muted loop playsinline>
+    <source src="bg.mp4" type="video/mp4">
   </video>
 
-  <div class="overlay"></div>
+  <!-- SECCIONES -->
+  <section>
+    <h1>TIVCO</h1>
+  </section>
 
-  <nav>
-    <a href="#s1"></a>
-    <a href="#s2"></a>
-    <a href="#s3"></a>
-    <a href="#s4"></a>
-    <a href="#s5"></a>
-  </nav>
+  <section>
+    <p>
+      Proyecto instrumental y experimental.  
+      Improvisación dirigida, reconstrucción en tiempo real.
+    </p>
+  </section>
 
-  <main>
-    <section id="s1"><h1>T I V C O</h1></section>
-    <section id="s2"><div><h2>Proyecto</h2><p>Proyecto instrumental y experimental.</p></div></section>
-    <section id="s3"><div><h2>Sonido</h2><p>Desert rock, dark western, psicodelia rural.</p></div></section>
-    <section id="s4"><div><h2>Visual</h2><p>Estética austera y tensión espacial.</p></div></section>
-    <section id="s5"><div><h2>Contacto</h2><p>tivcoband@gmail.com</p></div></section>
-  </main>
+  <section>
+    <p>
+      Desert rock · dark western · psicodelia rural · música cinematográfica
+    </p>
+  </section>
 
 </body>
 </html>

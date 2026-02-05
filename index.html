@@ -95,16 +95,37 @@ h1 {
   letter-spacing: 0.35em;
   text-transform: uppercase;
   font-weight: 300;
-  line-height: 1.6;
+  margin-bottom: 2rem;
 }
 
 p {
   font-family: 'Jost', sans-serif;
   font-size: 1.05rem;
-  line-height: 1.75;
+  line-height: 2; /* más interlineado */
   letter-spacing: 0.025em;
   font-weight: 300;
   max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+/* REDES ICONOS */
+.social-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+}
+
+.social-links a svg {
+  width: 36px;
+  height: 36px;
+  fill: white;
+  transition: fill 0.2s;
+}
+
+.social-links a:hover svg {
+  fill: #ccc;
 }
 
 /* DOT NAV */
@@ -131,30 +152,8 @@ p {
   opacity: 1;
 }
 
-/* SOCIALS */
-section#s1 .socials {
-  margin-top: 3rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.8rem;
-  flex-wrap: wrap;
-}
-
-section#s1 .socials img {
-  width: 36px;
-  height: 36px;
-  object-fit: contain;
-  filter: invert(100%); /* todos blancos */
-  transition: transform 0.25s ease;
-}
-
-section#s1 .socials img:hover {
-  transform: scale(1.2);
-}
-
 /* MOBILE FIX INTRO */
 @media (max-width: 768px) {
-
   section#s1 {
     padding: 2rem 1.5rem;
   }
@@ -162,20 +161,20 @@ section#s1 .socials img:hover {
   h1 {
     font-size: 1.9rem;
     letter-spacing: 0.18em;
-    line-height: 1.5;
+    line-height: 1.3;
     text-align: center;
   }
 
-  section#s1 .socials {
-    margin-top: 2rem;
-    gap: 1.2rem;
+  .social-links {
+    gap: 12px;
   }
 
-  section#s1 .socials img {
+  .social-links a svg {
     width: 28px;
     height: 28px;
   }
 }
+
 </style>
 </head>
 
@@ -207,20 +206,25 @@ section#s1 .socials img:hover {
 
 <section id="s1">
   <h1>The Ivonne Van Cleef Orquesta</h1>
-
-  <!-- ICONOS REDES CENTRADOS -->
-  <div class="socials">
+  
+  <div class="social-links">
+    <!-- Bandcamp -->
     <a href="https://ivonnevancleef.bandcamp.com/" target="_blank" aria-label="Bandcamp">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/bandcamp.svg" alt="Bandcamp">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm1 14h-2v-2h2v2zm2-4H9v-2h6v2z"/></svg>
     </a>
+    <!-- Instagram -->
     <a href="https://www.instagram.com/ivonnevancleef/" target="_blank" aria-label="Instagram">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.246 2.43.414a4.92 4.92 0 011.675 1.075 4.92 4.92 0 011.075 1.675c.168.46.358 1.26.414 2.43.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.246 1.97-.414 2.43a4.92 4.92 0 01-1.075 1.675 4.92 4.92 0 01-1.675 1.075c-.46.168-1.26.358-2.43.414-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.246-2.43-.414a4.92 4.92 0 01-1.675-1.075 4.92 4.92 0 01-1.075-1.675c-.168-.46-.358-1.26-.414-2.43C2.175 15.584 2.163 15.204 2.163 12s.012-3.584.07-4.85c.056-1.17.246-1.97.414-2.43a4.92 4.92 0 011.075-1.675 4.92 4.92 0 011.675-1.075c.46-.168 1.26-.358 2.43-.414C8.416 2.175 8.796 2.163 12 2.163zm0 1.837c-3.18 0-3.556.012-4.805.07-1.02.046-1.568.217-1.935.362-.485.183-.833.403-1.2.77-.367.367-.587.715-.77 1.2-.145.367-.316.915-.362 1.935-.058 1.249-.07 1.625-.07 4.805s.012 3.556.07 4.805c.046 1.02.217 1.568.362 1.935.183.485.403.833.77 1.2.367.367.715.587 1.2.77.367.145.915.316 1.935.362 1.249.058 1.625.07 4.805.07s3.556-.012 4.805-.07c1.02-.046 1.568-.217 1.935-.362.485-.183.833-.403 1.2-.77.367-.367.587-.715.77-1.2.145-.367.316-.915.362-1.935.058-1.249.07-1.625.07-4.805s-.012-3.556-.07-4.805c-.046-1.02-.217-1.568-.362-1.935a3.036 3.036 0 00-.77-1.2 3.036 3.036 0 00-1.2-.77c-.367-.145-.915-.316-1.935-.362-1.249-.058-1.625-.07-4.805-.07zm0 4.838a5.163 5.163 0 110 10.326 5.163 5.163 0 010-10.326zm0 1.837a3.326 3.326 0 100 6.652 3.326 3.326 0 000-6.652zm6.406-3.23a1.2 1.2 0 11-2.4 0 1.2 1.2 0 012.4 0z"/></svg>
     </a>
+    <!-- YouTube -->
     <a href="https://www.youtube.com/@ivonnevancleef" target="_blank" aria-label="YouTube">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" alt="YouTube">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6zm12-3c0-1.5-.06-3-.18-4.5-.11-1.45-.41-2.57-.92-3.44-.52-.88-1.3-1.56-2.35-1.96C16.23 2 13.5 2 12 2S7.77 2 6.45 2.6c-1.05.4-1.83 1.08-2.35 1.96-.51.87-.81 1.99-.92 3.44C2.06 9 2 10.5 2 12c0 1.5.06 3 .18 4.5.11 1.45.41 2.57.92 3.44.52.88 1.3 1.56 2.35 1.96C7.77 22 10.5 22 12 22s4.23 0 5.55-.6c1.05-.4 1.83-1.08 2.35-1.96.51-.87.81-1.99.92-3.44.12-1.5.18-3 .18-4.5z"/></svg>
     </a>
+    <!-- Correo -->
     <a href="mailto:ivonnevancleef@gmail.com" aria-label="E-mail">
-      <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/envelope.svg" alt="E-mail">
+      <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="white">
+        <path d="M12 13.065L1.5 6.75V18h21V6.75L12 13.065zM12 11L1.5 4.5h21L12 11z"/>
+      </svg>
     </a>
   </div>
 </section>

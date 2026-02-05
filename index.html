@@ -1,101 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <title>TIVCO</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>TIVCO</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    html, body {
-      height: 100%;
-      font-family: Arial, Helvetica, sans-serif;
-      color: white;
-      background: black;
-    }
+html, body {
+  height: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  scroll-behavior: smooth;
+}
 
-    /* VIDEO */
-    .video-bg {
-      position: fixed;
-      inset: 0;
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      z-index: -1;
-      pointer-events: none;
-    }
+/* VIDEO */
+.video-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -3;
+}
 
-    /* SECCIONES */
-    section {
-      min-height: 100vh;
-      padding: 4rem 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: transparent;
-    }
+/* TEXTURA PIXEL */
+.texture {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.25) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.25) 1px, transparent 1px);
+  background-size: 6px 6px;
+  pointer-events: none;
+}
 
-    h1 {
-      font-size: 4rem;
-      letter-spacing: 0.2em;
-    }
+/* OSCURECER UN POCO */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: -1;
+}
 
-    p {
-      max-width: 700px;
-      line-height: 1.6;
-      font-size: 1.1rem;
-    }
-  </style>
+/* SECCIONES */
+section {
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* TEXTO */
+h1 {
+  font-size: 4rem;
+  letter-spacing: 0.3em;
+}
+
+p {
+  max-width: 700px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* DOT NAV */
+.nav {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10;
+}
+
+.nav a {
+  width: 10px;
+  height: 10px;
+  border: 1px solid white;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.nav a:hover {
+  opacity: 1;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- VIDEO SIEMPRE PRIMERO -->
-  <video class="video-bg" autoplay muted loop playsinline>
-    <source src="bg.mp4" type="video/mp4">
-  </video>
+<!-- FONDOS -->
+<video class="video-bg" autoplay muted loop playsinline>
+  <source src="bg.mp4" type="video/mp4">
+</video>
+<div class="texture"></div>
+<div class="overlay"></div>
 
-  <!-- SECCIÓN 1 / INTRO -->
-  <section>
-    <h1>TIVCO BLBLBLBLBL</h1>
-  </section>
+<!-- DOT NAV -->
+<div class="nav">
+  <a href="#s1"></a>
+  <a href="#s2"></a>
+  <a href="#s3"></a>
+  <a href="#s4"></a>
+  <a href="#s5"></a>
+</div>
 
-  <!-- SECCIÓN 2 -->
-  <section>
-    <p>
-      Proyecto instrumental y experimental con foco en el trabajo en vivo,
-      la improvisación dirigida y la reconstrucción de las piezas en tiempo real.
-    </p>
-  </section>
+<!-- SECCIONES -->
+<section id="s1">
+  <h1>TIVCO</h1>
+</section>
 
-  <!-- SECCIÓN 3 -->
-  <section>
-    <p>
-      Cruce entre desert rock, dark western,
-      psicodelia rural y música cinematográfica.
-    </p>
-  </section>
+<section id="s2">
+  <p>
+    Proyecto instrumental y experimental con foco en el trabajo en vivo,
+    la improvisación dirigida y la reconstrucción en tiempo real.
+  </p>
+</section>
 
-  <!-- SECCIÓN 4 -->
-  <section>
-    <p>
-      Sonido crudo, narrativo y expansivo.
-      Paisajes eléctricos y tensión ritual.
-    </p>
-  </section>
+<section id="s3">
+  <p>
+    Cruce entre desert rock, dark western,
+    psicodelia rural y música cinematográfica.
+  </p>
+</section>
 
-  <!-- SECCIÓN 5 -->
-  <section>
-    <p>
-      Rosario, Argentina.
-    </p>
-  </section>
+<section id="s4">
+  <p>
+    Paisajes eléctricos, tensión ritual y narrativa sonora.
+  </p>
+</section>
+
+<section id="s5">
+  <p>
+    Rosario, Argentina.
+  </p>
+</section>
 
 </body>
 </html>

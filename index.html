@@ -8,7 +8,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-  
 <style>
 * {
   margin: 0;
@@ -33,7 +32,7 @@ html, body {
   z-index: -3;
 }
 
-/* TEXTURA PIXEL */
+/* TEXTURA */
 .texture {
   position: fixed;
   inset: 0;
@@ -45,12 +44,37 @@ html, body {
   pointer-events: none;
 }
 
-/* OSCURECER UN POCO */
+/* OSCURECER */
 .overlay {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.35);
   z-index: -1;
+}
+
+/* IDIOMAS */
+.lang-switch {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 20;
+  display: flex;
+  gap: 10px;
+}
+
+.lang-btn {
+  background: none;
+  border: 1px solid white;
+  color: white;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  padding: 6px 10px;
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.lang-btn[aria-pressed="true"] {
+  opacity: 1;
 }
 
 /* SECCIONES */
@@ -80,7 +104,7 @@ p {
   font-weight: 300;
   max-width: 700px;
 }
-  
+
 /* DOT NAV */
 .nav {
   position: fixed;
@@ -116,6 +140,12 @@ p {
 <div class="texture"></div>
 <div class="overlay"></div>
 
+<!-- SWITCH IDIOMA -->
+<div class="lang-switch">
+  <button class="lang-btn" data-lang="es" aria-pressed="true">ESP</button>
+  <button class="lang-btn" data-lang="en" aria-pressed="false">ENG</button>
+</div>
+
 <!-- DOT NAV -->
 <div class="nav">
   <a href="#s1"></a>
@@ -126,35 +156,67 @@ p {
 </div>
 
 <!-- SECCIONES -->
+
 <section id="s1">
   <h1>The Ivonne Van Cleef Orquesta</h1>
 </section>
 
 <section id="s2">
-  <p>
-    Proyecto instrumental y experimental con foco en el trabajo en vivo,
-    la improvisación dirigida y la reconstrucción en tiempo real.
-  </p>
+  <div class="lang es">
+    <p>
+      Proyecto instrumental y experimental con foco en el trabajo en vivo,
+      la improvisación dirigida y la reconstrucción en tiempo real.
+    </p>
+  </div>
+  <div class="lang en" hidden>
+    <p>
+      Instrumental and experimental project focused on live performance,
+      guided improvisation and real-time reconstruction.
+    </p>
+  </div>
 </section>
 
 <section id="s3">
-  <p>
-    Cruce entre desert rock, dark western,
-    psicodelia rural y música cinematográfica.
-  </p>
+  <div class="lang es">
+    <p>
+      Cruce entre desert rock, dark western,
+      psicodelia rural y música cinematográfica.
+    </p>
+  </div>
+  <div class="lang en" hidden>
+    <p>
+      A crossroads of desert rock, dark western,
+      rural psychedelia and cinematic music.
+    </p>
+  </div>
 </section>
 
 <section id="s4">
-  <p>
-    Paisajes eléctricos, tensión ritual y narrativa sonora.
-  </p>
+  <div class="lang es">
+    <p>
+      Paisajes eléctricos, tensión ritual y narrativa sonora.
+    </p>
+  </div>
+  <div class="lang en" hidden>
+    <p>
+      Electric landscapes, ritual tension and sonic storytelling.
+    </p>
+  </div>
 </section>
 
 <section id="s5">
-  <p>
-    Rosario, Argentina.
-  </p>
+  <div class="lang es">
+    <p>
+      Rosario, Argentina.
+    </p>
+  </div>
+  <div class="lang en" hidden>
+    <p>
+      Rosario, Argentina.
+    </p>
+  </div>
 </section>
 
+<script src="lang.js"></script>
 </body>
 </html>

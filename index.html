@@ -61,4 +61,43 @@
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 10p
+      gap: 10px;
+      z-index: 2;
+    }
+
+    nav a {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.4);
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- VIDEO FONDO ROOT -->
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="bg.mp4" type="video/mp4" />
+  </video>
+
+  <div class="overlay"></div>
+
+  <nav>
+    <a href="#s1"></a>
+    <a href="#s2"></a>
+    <a href="#s3"></a>
+    <a href="#s4"></a>
+    <a href="#s5"></a>
+  </nav>
+
+  <main>
+    <section id="s1"><h1>T I V C O</h1></section>
+    <section id="s2"><div><h2>Proyecto</h2><p>Proyecto instrumental y experimental.</p></div></section>
+    <section id="s3"><div><h2>Sonido</h2><p>Desert rock, dark western, psicodelia rural.</p></div></section>
+    <section id="s4"><div><h2>Visual</h2><p>Estética austera y tensión espacial.</p></div></section>
+    <section id="s5"><div><h2>Contacto</h2><p>tivcoband@gmail.com</p></div></section>
+  </main>
+
+</body>
+</html>

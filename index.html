@@ -33,9 +33,12 @@
 
     /* Scroll por pantallas */
     main {
+      position: relative;
+      z-index: 1;
       height: 100vh;
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
+      background: transparent;
     }
 
     section {
@@ -46,6 +49,7 @@
       justify-content: center;
       color: #fff;
       text-align: center;
+      background: transparent;
     }
 
     h1 { font-size: 4rem; letter-spacing: 0.1em; }
@@ -87,7 +91,7 @@
 
     <!-- Video global -->
   <video id="bg-video" autoplay muted loop playsinline>
-    <source src="bg.mp4" type="video/mp4" />
+    <source src="video/bg.mp4" type="video/mp4" />
   </video>
 
   <main>
@@ -142,4 +146,5 @@
 
 </body>
 </html>
+
 

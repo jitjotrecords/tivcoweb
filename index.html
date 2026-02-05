@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
-    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -20,11 +19,10 @@
       background: black;
     }
 
-    /* VIDEO DE FONDO */
+    /* VIDEO */
     .video-bg {
       position: fixed;
-      top: 0;
-      left: 0;
+      inset: 0;
       width: 100vw;
       height: 100vh;
       object-fit: cover;
@@ -32,7 +30,7 @@
       pointer-events: none;
     }
 
-    /* CONTENIDO */
+    /* SECCIONES */
     section {
       min-height: 100vh;
       padding: 4rem 2rem;
@@ -44,39 +42,58 @@
     }
 
     h1 {
-      font-size: 3rem;
-      letter-spacing: 0.1em;
+      font-size: 4rem;
+      letter-spacing: 0.2em;
     }
 
     p {
-      max-width: 600px;
+      max-width: 700px;
       line-height: 1.6;
+      font-size: 1.1rem;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- VIDEO -->
+  <!-- VIDEO SIEMPRE PRIMERO -->
   <video class="video-bg" autoplay muted loop playsinline>
     <source src="bg.mp4" type="video/mp4">
   </video>
 
-  <!-- SECCIONES -->
+  <!-- SECCIÓN 1 / INTRO -->
   <section>
     <h1>TIVCO</h1>
   </section>
 
+  <!-- SECCIÓN 2 -->
   <section>
     <p>
-      Proyecto instrumental y experimental.  
-      Improvisación dirigida, reconstrucción en tiempo real.
+      Proyecto instrumental y experimental con foco en el trabajo en vivo,
+      la improvisación dirigida y la reconstrucción de las piezas en tiempo real.
     </p>
   </section>
 
+  <!-- SECCIÓN 3 -->
   <section>
     <p>
-      Desert rock · dark western · psicodelia rural · música cinematográfica
+      Cruce entre desert rock, dark western,
+      psicodelia rural y música cinematográfica.
+    </p>
+  </section>
+
+  <!-- SECCIÓN 4 -->
+  <section>
+    <p>
+      Sonido crudo, narrativo y expansivo.
+      Paisajes eléctricos y tensión ritual.
+    </p>
+  </section>
+
+  <!-- SECCIÓN 5 -->
+  <section>
+    <p>
+      Rosario, Argentina.
     </p>
   </section>
 

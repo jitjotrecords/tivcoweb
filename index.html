@@ -22,12 +22,12 @@
     }
 
     /* Overlay oscuro */
-    body::after {
-      content: "";
+    /* Overlay oscuro */
+    .overlay {
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.45);
-      z-index: -1;
+      z-index: 0;
       pointer-events: none;
     }
 
@@ -80,6 +80,14 @@
   </style>
 </head>
 <body>
+
+  <!-- Video de fondo -->
+  <video id="bg-video" autoplay muted loop playsinline>
+    <source src="video/bg.mp4" type="video/mp4" />
+  </video>
+
+  <!-- Overlay -->
+  <div class="overlay"></div>
 
   <nav>
     <a href="#s1">Intro</a>
@@ -146,5 +154,3 @@
 
 </body>
 </html>
-
-

@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TIVCO</title>
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html, body { height: 100%; scroll-behavior: smooth; background: #000; }
-    body { font-family: Arial, Helvetica, sans-serif; overflow: hidden; }
 
-    /* Video de fondo global */
+  <style>
+    /* RESET TOTAL */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; background: #000; }
+
+    /* VIDEO FONDO */
     #bg-video {
       position: fixed;
       top: 0;
@@ -21,24 +22,23 @@
       background: #000;
     }
 
-    /* Overlay oscuro */
-    /* Overlay oscuro */
+    /* OVERLAY */
     .overlay {
       position: fixed;
       inset: 0;
       background: rgba(0,0,0,0.45);
-      z-index: 0;
-      pointer-events: none;
+      z-index: -1;
     }
 
-    /* Scroll por pantallas */
+    /* CONTENIDO */
     main {
       position: relative;
       z-index: 1;
       height: 100vh;
       overflow-y: scroll;
       scroll-snap-type: y mandatory;
-      background: transparent;
+      font-family: Arial, Helvetica, sans-serif;
+      color: #fff;
     }
 
     section {
@@ -47,14 +47,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
       text-align: center;
-      background: transparent;
     }
 
-    h1 { font-size: 4rem; letter-spacing: 0.1em; }
+    h1 { font-size: 4rem; letter-spacing: 0.2em; }
     h2 { font-size: 2.5rem; margin-bottom: 1rem; }
-    p  { max-width: 700px; line-height: 1.5; padding: 0 1rem; }
+    p { max-width: 700px; line-height: 1.5; padding: 0 1rem; }
 
     nav {
       position: fixed;
@@ -63,94 +61,4 @@
       transform: translateY(-50%);
       display: flex;
       flex-direction: column;
-      gap: 10px;
-      z-index: 10;
-    }
-
-    nav a {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.4);
-      display: block;
-      text-indent: -9999px;
-    }
-
-    nav a:hover { background: #fff; }
-  </style>
-</head>
-<body>
-
-  <!-- Video de fondo -->
-  <video id="bg-video" autoplay muted loop playsinline>
-    <source src="bg.mp4" type="video/mp4" />
-  </video>
-
-  <!-- Overlay -->
-  <div class="overlay"></div>
-
-  <nav>
-    <a href="#s1">Intro</a>
-    <a href="#s2">Proyecto</a>
-    <a href="#s3">Sonido</a>
-    <a href="#s4">Visual</a>
-    <a href="#s5">Contacto</a>
-  </nav>
-
-    <!-- Video global -->
-  <video id="bg-video" autoplay muted loop playsinline>
-    <source src="bg.mp4" type="video/mp4" />
-  </video>
-
-  <main>
-    <!-- 1 -->
-    <section id="s1">
-      <h1>T I V C O</h1>
-    </section>
-
-    <!-- 2 -->
-    <section id="s2">
-      <div>
-        <h2>Proyecto</h2>
-        <p>
-          Proyecto instrumental y experimental con foco en el trabajo en vivo,
-          la improvisación dirigida y la reconstrucción del sonido en tiempo real.
-        </p>
-      </div>
-    </section>
-
-    <!-- 3 -->
-    <section id="s3">
-      <div>
-        <h2>Sonido</h2>
-        <p>
-          Cruce entre desert rock, dark western, psicodelia rural
-          y música cinematográfica.
-        </p>
-      </div>
-    </section>
-
-    <!-- 4 -->
-    <section id="s4">
-      <div>
-        <h2>Visual</h2>
-        <p>
-          Estética austera, narrativa lenta y tensión espacial.
-        </p>
-      </div>
-    </section>
-
-    <!-- 5 -->
-    <section id="s5">
-      <div>
-        <h2>Contacto</h2>
-        <p>
-          tivcoband@gmail.com<br />
-          Instagram / Bandcamp / YouTube
-        </p>
-      </div>
-    </section>
-  </main>
-
-</body>
-</html>
+      gap: 10p

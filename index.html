@@ -217,10 +217,24 @@ gap:20px;
 
 }
 
+/* SISTEMA DE IDIOMA */
+
+[data-lang]{
+display:none;
+}
+
+body.lang-en [data-lang="en"]{
+display:block;
+}
+
+body.lang-es [data-lang="es"]{
+display:block;
+}
+
 </style>
 </head>
 
-<body>
+<body class="lang-en">
 
 <video class="video-bg" autoplay muted loop playsinline>
 <source src="bg2.mp4" type="video/mp4">
@@ -230,21 +244,17 @@ gap:20px;
 <div class="overlay"></div>
 
 <div class="lang-switch">
-<button class="lang-btn" data-lang="es" aria-pressed="true">ESP</button>
-<button class="lang-btn" data-lang="en" aria-pressed="false">ENG</button>
+<button class="lang-btn" data-lang="es">ESP</button>
+<button class="lang-btn" data-lang="en" aria-pressed="true">ENG</button>
 </div>
 
-<!-- NAV -->
-
 <div class="nav">
-
 <a href="#home"><span class="label">Home</span></a>
 <a href="#about"><span class="label">About</span></a>
 <a href="#live"><span class="label">Live</span></a>
 <a href="#press"><span class="label">Press</span></a>
 <a href="#discography"><span class="label">Discography</span></a>
 <a href="#booking"><span class="label">Booking</span></a>
-
 </div>
 
 <section id="home">
@@ -391,9 +401,23 @@ link.classList.add("active");
 
 });
 
-</script>
+const buttons = document.querySelectorAll(".lang-btn");
 
-<script src="lang.js"></script>
+buttons.forEach(btn=>{
+btn.addEventListener("click",()=>{
+
+const lang = btn.dataset.lang;
+
+document.body.classList.remove("lang-es","lang-en");
+document.body.classList.add("lang-"+lang);
+
+buttons.forEach(b=>b.setAttribute("aria-pressed","false"));
+btn.setAttribute("aria-pressed","true");
+
+});
+});
+
+</script>
 
 </body>
 </html>

@@ -13,11 +13,7 @@
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 html,body{
 height:100%;
@@ -78,10 +74,16 @@ font-family:'Jost', sans-serif;
 font-size:0.75rem;
 padding:6px 10px;
 cursor:pointer;
-opacity:0.6;
+opacity:0.7;
+}
+
+.lang-btn:hover{
+opacity:1;
 }
 
 .lang-btn[aria-pressed="true"]{
+background:white;
+color:black;
 opacity:1;
 }
 
@@ -115,6 +117,7 @@ line-height:1.75;
 letter-spacing:0.025em;
 font-weight:300;
 max-width:700px;
+margin-bottom:1rem;
 }
 
 /* NAV */
@@ -154,9 +157,7 @@ transition:.25s;
 background:white;
 }
 
-.nav a:hover{
-opacity:1;
-}
+.nav a:hover{opacity:1;}
 
 .label{
 font-family:'Jost', sans-serif;
@@ -200,9 +201,7 @@ transform:scale(1.1);
 
 @media (max-width:768px){
 
-section{
-padding:2rem 1.5rem;
-}
+section{padding:2rem 1.5rem;}
 
 h1{
 font-size:1.9rem;
@@ -210,26 +209,17 @@ letter-spacing:0.18em;
 line-height:1.3;
 }
 
-.social-links{
-margin-top:2rem;
-gap:20px;
-}
+.social-links{margin-top:2rem;gap:20px;}
 
 }
 
 /* SISTEMA DE IDIOMA */
 
-[data-lang]{
-display:none;
-}
+[data-lang]{display:none;}
 
-body.lang-en [data-lang="en"]{
-display:block;
-}
+body.lang-en [data-lang="en"]{display:block;}
 
-body.lang-es [data-lang="es"]{
-display:block;
-}
+body.lang-es [data-lang="es"]{display:block;}
 
 </style>
 </head>
@@ -244,8 +234,8 @@ display:block;
 <div class="overlay"></div>
 
 <div class="lang-switch">
-<button class="lang-btn" data-lang="es">ESP</button>
 <button class="lang-btn" data-lang="en" aria-pressed="true">ENG</button>
+<button class="lang-btn" data-lang="es" aria-pressed="false">ESP</button>
 </div>
 
 <div class="nav">
@@ -273,21 +263,10 @@ Paisajes instrumentales cinematográficos en constante transformación.
 
 <div class="social-links">
 
-<a href="https://ivonnevancleef.bandcamp.com/" target="_blank">
-<i class="fab fa-bandcamp"></i>
-</a>
-
-<a href="https://www.instagram.com/ivonnevancleef/" target="_blank">
-<i class="fab fa-instagram"></i>
-</a>
-
-<a href="https://www.youtube.com/@ivonnevancleef" target="_blank">
-<i class="fab fa-youtube"></i>
-</a>
-
-<a href="mailto:ivonnevancleef@gmail.com">
-<i class="fas fa-envelope"></i>
-</a>
+<a href="https://ivonnevancleef.bandcamp.com/" target="_blank"><i class="fab fa-bandcamp"></i></a>
+<a href="https://www.instagram.com/ivonnevancleef/" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="https://www.youtube.com/@ivonnevancleef" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="mailto:ivonnevancleef@gmail.com"><i class="fas fa-envelope"></i></a>
 
 </div>
 
@@ -371,49 +350,15 @@ Cada concierto reconfigura el material en un viaje sonoro único.
 
 <script>
 
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".nav a");
-
-window.addEventListener("scroll", () => {
-
-let current = "";
-
-sections.forEach(section => {
-
-const sectionTop = section.offsetTop;
-const sectionHeight = section.clientHeight;
-
-if(pageYOffset >= sectionTop - sectionHeight/3){
-current = section.getAttribute("id");
-}
-
-});
-
-navLinks.forEach(link =>{
-
-link.classList.remove("active");
-
-if(link.getAttribute("href") === "#" + current){
-link.classList.add("active");
-}
-
-});
-
-});
-
-const buttons = document.querySelectorAll(".lang-btn");
+const buttons=document.querySelectorAll(".lang-btn");
 
 buttons.forEach(btn=>{
 btn.addEventListener("click",()=>{
-
-const lang = btn.dataset.lang;
-
-document.body.classList.remove("lang-es","lang-en");
+const lang=btn.dataset.lang;
+document.body.classList.remove("lang-en","lang-es");
 document.body.classList.add("lang-"+lang);
-
 buttons.forEach(b=>b.setAttribute("aria-pressed","false"));
 btn.setAttribute("aria-pressed","true");
-
 });
 });
 

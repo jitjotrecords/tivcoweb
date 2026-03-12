@@ -117,7 +117,7 @@ font-weight:300;
 max-width:700px;
 }
 
-/* NAV LATERAL */
+/* NAV */
 
 .nav{
 position:fixed;
@@ -136,7 +136,8 @@ align-items:center;
 justify-content:flex-end;
 gap:12px;
 text-decoration:none;
-opacity:0.6;
+opacity:0.7;
+color:white;
 }
 
 .nav a::after{
@@ -146,6 +147,11 @@ height:10px;
 border:1px solid white;
 border-radius:50%;
 display:block;
+transition:.25s;
+}
+
+.nav a.active::after{
+background:white;
 }
 
 .nav a:hover{
@@ -161,6 +167,7 @@ opacity:0;
 transform:translateX(10px);
 transition:all .25s ease;
 white-space:nowrap;
+color:white;
 }
 
 .nav a:hover .label{
@@ -222,8 +229,6 @@ gap:20px;
 <div class="texture"></div>
 <div class="overlay"></div>
 
-<!-- IDIOMA -->
-
 <div class="lang-switch">
 <button class="lang-btn" data-lang="es" aria-pressed="true">ESP</button>
 <button class="lang-btn" data-lang="en" aria-pressed="false">ENG</button>
@@ -271,89 +276,65 @@ gap:20px;
 
 </section>
 
-<!-- ABOUT -->
-
 <section id="about">
-
-<div class="lang es">
-<p>
-Proyecto instrumental y experimental con foco en el trabajo en vivo,
-la improvisación dirigida y la reconstrucción en tiempo real.
-</p>
-</div>
-
-<div class="lang en" hidden>
-<p>
-Instrumental and experimental project focused on live performance,
-guided improvisation and real-time reconstruction.
-</p>
-</div>
-
+<p>Proyecto instrumental y experimental con foco en el trabajo en vivo, la improvisación dirigida y la reconstrucción en tiempo real.</p>
 </section>
-
-<!-- LIVE -->
 
 <section id="live">
-
-<div class="lang es">
-<p>
-Cruce entre desert rock, dark western,
-psicodelia rural y música cinematográfica.
-</p>
-</div>
-
-<div class="lang en" hidden>
-<p>
-A crossroads of desert rock, dark western,
-rural psychedelia and cinematic music.
-</p>
-</div>
-
+<p>Cruce entre desert rock, dark western, psicodelia rural y música cinematográfica.</p>
 </section>
-
-<!-- PRESS -->
 
 <section id="press">
-
-<div class="lang es">
-<p>
-Paisajes eléctricos, tensión ritual
-y narrativa sonora.
-</p>
-</div>
-
-<div class="lang en" hidden>
-<p>
-Electric landscapes,
-ritual tension and sonic storytelling.
-</p>
-</div>
-
+<p>Paisajes eléctricos, tensión ritual y narrativa sonora.</p>
 </section>
-
-<!-- DISCOGRAPHY -->
 
 <section id="discography">
-
 <p>Discography coming soon</p>
-
 </section>
-
-<!-- CONTACT -->
 
 <section id="contact">
-
-<p>San José del Rincón, Argentina</p>
-
+<p>Rosario, Argentina</p>
 </section>
-
-<!-- BOOKING -->
 
 <section id="booking">
-
 <p>ivonnevancleef@gmail.com</p>
-
 </section>
+
+<script>
+
+/* NAV ACTIVE */
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav a");
+
+window.addEventListener("scroll", () => {
+
+let current = "";
+
+sections.forEach(section => {
+
+const sectionTop = section.offsetTop;
+const sectionHeight = section.clientHeight;
+
+if(pageYOffset >= sectionTop - sectionHeight/3){
+current = section.getAttribute("id");
+}
+
+});
+
+navLinks.forEach(link =>{
+
+link.classList.remove("active");
+
+if(link.getAttribute("href") === "#" + current){
+link.classList.add("active");
+}
+
+});
+
+});
+
+</script>
 
 <script src="lang.js"></script>
 
